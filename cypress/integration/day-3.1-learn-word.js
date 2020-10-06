@@ -11,7 +11,7 @@
   - I'm shown the number of correct and incorrect guesses for that word
   - I'm presented an input to type my answer/guess for the current words translation
 */
-describe.skip(`User story: Presented with word`, function() {
+describe(`User story: Presented with word`, function() {
   beforeEach(() => {
     cy.server()
       .route({

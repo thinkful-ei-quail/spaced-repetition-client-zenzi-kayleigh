@@ -13,7 +13,7 @@
   - I'm told how many times I was correct or incorrect for the word
   - I can see a button/link to try another word
 */
-describe.skip(`User story: Answer feedback`, function() {
+describe(`User story: Answer feedback`, function() {
   beforeEach(() => {
     cy.server()
       .route({
