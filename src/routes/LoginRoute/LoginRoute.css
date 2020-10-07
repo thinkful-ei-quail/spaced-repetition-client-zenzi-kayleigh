@@ -2,8 +2,15 @@
     margin: 50px;
     margin-bottom: 0;
 }
-@media all and (max-width:600px){/*when nav is in line with header, add padding before summary*/
+@media all and (max-width:600px) and (min-width:400px){/*when nav is in line with header, add padding before summary*/
     .login-component{
         padding-top:80px
     }
+}
+@media all and (max-width:400px){/*on super small screens, reduce padding size*/
+
+    .login-component{
+        padding-top:20px
+    }
+    
 }
