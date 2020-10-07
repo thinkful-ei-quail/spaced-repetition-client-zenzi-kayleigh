@@ -4,7 +4,7 @@ import IdleService from '../services/idle-service'
 import config from '../config'
 
 const LanguageContext = React.createContext({
-  language: [],
+  language: null,
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -17,7 +17,7 @@ export class LanguageProvider extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      language: [],
+      language: null,
     };
   }
 
