@@ -9,3 +9,16 @@
     text-align: center;
     padding: 10px;
 }
+@media all and (max-width:400px){
+
+    .login-form{
+        margin-right:0px;
+        margin-left:0px;
+        padding-right:0px;
+        padding-left:0px;
+    }
+    .form-line{
+        padding:5px;
+    }
+    
+}
