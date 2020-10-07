@@ -1,7 +1,8 @@
 .registration-form{
     background-color: lightblue;
     padding: 50px;
-    margin:50px
+    margin:50px;
+    margin-top: 5px;
 }
 .form-line{
     text-align: center;
