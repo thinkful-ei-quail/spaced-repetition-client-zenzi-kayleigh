@@ -2,7 +2,7 @@
   "baseUrl": "http://localhost:3000",
   "env": {
     "API_ENDPOINT": "https://still-savannah-14808.herokuapp.com/api",
-    "TOKEN_KEY": "0e9fe658-17da-4642-ab59-025408e06105"
+    "TOKEN_KEY": "token-key"
   },
   "chromeWebSecurity": false
 }

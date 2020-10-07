@@ -22,7 +22,11 @@ export class LanguageProvider extends Component {
   }
 
   componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/language`)
+    fetch(`${config.API_ENDPOINT}/language`,{
+      headers:{
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
+    })
     .then(response => response.json())
     .then((language) => {
       console.log('language', language)
