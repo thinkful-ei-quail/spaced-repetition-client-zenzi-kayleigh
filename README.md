@@ -73,3 +73,9 @@ As a logged in user, I can learn another word after receiving feedback from my p
 When viewing feedback for an answer on the learning page as a logged in user:
 - I'm presented with a button that I can click to learn another word
 - When clicking on the button I see the next word to learn
+
+
+# Dev helpers
+## Run Cypress tests:
+run the following code in the terminal:
+npm run cypress:open
