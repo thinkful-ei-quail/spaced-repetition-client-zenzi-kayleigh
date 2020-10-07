@@ -1,14 +1,12 @@
 .summary{
-    
     text-align: center;
 }
 .registration-header{
     margin: 50px;
     margin-bottom: 0;
 }
-@media all and (min-width:1118px){
 
-
+@media all and (min-width:1118px){ /*when screen is large, split components*/
     .right{
         float: right;
         margin-right:40px;
@@ -19,9 +17,8 @@
         float: left;        
     }
 }
-@media all and (max-width:600px){
+@media all and (max-width:600px){/*when nav is in line with header, add padding before summary*/
     .summary{
         padding-top:80px
     }
-
   }

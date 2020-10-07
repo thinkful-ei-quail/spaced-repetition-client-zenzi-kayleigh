@@ -1,0 +1,9 @@
+.login-header{
+    margin: 50px;
+    margin-bottom: 0;
+}
+@media all and (max-width:600px){/*when nav is in line with header, add padding before summary*/
+    .login-component{
+        padding-top:80px
+    }
+}
