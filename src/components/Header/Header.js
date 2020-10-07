@@ -40,15 +40,17 @@ class Header extends Component {
 
   render() {
     return (
-      <header>
+      <header className="header-container">
         <h1>
           <Link to='/'>
             Langful
           </Link>
         </h1>
-        {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()}
+        <div className='nav'>
+          {TokenService.hasAuthToken()
+            ? this.renderLogoutLink()
+            : this.renderLoginLink()}
+        </div>
       </header>
     );
   }

@@ -1,0 +1,36 @@
+
+.nav a, .nav a:hover, .nav a:focus, .nav a:active {
+    text-decoration: none;
+}
+.nav a, .nav a:hover, .nav a:focus, .nav a:active {
+    text-decoration: none;
+}
+@media all and (min-width:600px){
+
+}
+@media all and (max-width:600px)and (min-width:300px){
+    .header-container{
+        padding-bottom: 80px;
+    }
+    h1 {
+        float: left;
+    }
+    nav {
+        float: right;
+        padding: 35px;
+    }
+  }
+  @media all and (max-width:300px){
+
+    .header-container{
+        padding-bottom: unset;
+    }
+    h1 {
+        float: unset;
+        padding: unset;
+    }
+    nav {
+        float: unset;
+        padding: unset;
+    }
+}
