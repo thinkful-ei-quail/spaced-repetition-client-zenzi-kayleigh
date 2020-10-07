@@ -20,7 +20,7 @@
         padding-top:unset;
     }
 }
-@media all and (max-width:600px)and (min-width:300px){
+@media all and (max-width:600px) and (min-width:300px){
     .header{
         font-size: 60px;
     }
