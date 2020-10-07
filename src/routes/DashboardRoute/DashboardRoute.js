@@ -22,21 +22,32 @@ class DashboardRoute extends Component {
         )
       }
     }
+    const renderPage = () => {
 
+      if (this.context.language !== null ){
+        const {name , total_score} = this.context.language.language;     
+        return (
+          <section className="language-component">
+            <div className="language-header">
+              <h3>{name}</h3>          
+            </div>
+            {toggleLanguageComponent()}
+            <p className="total-score">Total Score:{total_score}</p>
+            <button className="start-learning-button">
+              START PRACTICING
+            </button>
+          </section>
+        );
+      } else {
+        return (
+          <h3>Content Loading...</h3>
+        )
+      }
+    }
     return (
-      <section className="language-component">
-        <div className="language-header">
-          <h3>Latin</h3>          
-        </div>
-
-        {toggleLanguageComponent()}
-
-        <p className="total-score">Total Score:</p>
-
-        <button className="start-learning-button">
-          START PRACTICING
-        </button>
-      </section>
+      <>
+        {renderPage()}
+      </>
     );
   }
 }
