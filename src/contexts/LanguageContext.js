@@ -23,7 +23,6 @@ export class LanguageProvider extends Component {
 
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/language`)
-
     .then(response => response.json())
     .then((language) => {
       console.log('language', language)
