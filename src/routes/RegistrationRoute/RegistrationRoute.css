@@ -1,4 +1,5 @@
 .summary{
+    
     text-align: center;
 }
 .registration-header{
@@ -18,3 +19,9 @@
         float: left;        
     }
 }
+@media all and (max-width:600px){
+    .summary{
+        padding-top:80px
+    }
+
+  }

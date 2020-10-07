@@ -4,7 +4,7 @@ import IdleService from '../services/idle-service'
 import config from '../config'
 
 const LanguageContext = React.createContext({
-  language: {},
+  language: [],
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -13,6 +13,13 @@ const LanguageContext = React.createContext({
 export default LanguageContext
 
 export class LanguageProvider extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      language: [],
+    };
+  }
 
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/language`)
@@ -25,7 +32,6 @@ export class LanguageProvider extends Component {
     .catch((error) => {
       console.error(error.message );
     });
-
   }
 
   componentWillUnmount() {
@@ -41,16 +47,12 @@ export class LanguageProvider extends Component {
   clearError = () => {
     this.setState({ error: null })
   }
-
-
-
-
- 
-
-
   render() {
     const value = {
-
+      language: this.state.language,
+      error: this.state.error,
+      setError: this.setError,
+      clearError: this.clearError,
     }
     return (
       <LanguageContext.Provider value={value}>

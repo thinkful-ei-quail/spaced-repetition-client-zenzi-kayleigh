@@ -1,14 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 
 .nav a, .nav a:hover, .nav a:focus, .nav a:active {
     text-decoration: none;
+    color: black;
 }
 .header a, .header a:hover, .header a:focus, .header a:active {
+    font-family: 'Amatic SC', cursive;
     text-decoration: none;
+    color: black;
+    
 }
 @media all and (min-width:600px){
-
+    .header{
+        font-size: 90px;
+        padding-bottom: 0;
+    }
+    .nav{
+        padding-top:unset;
+    }
 }
 @media all and (max-width:600px)and (min-width:300px){
+    .header{
+        font-size: 60px;
+    }
     .header-container{
         padding-bottom: 80px;
     }
@@ -18,6 +33,7 @@
     nav {
         float: right;
         padding: 35px;
+        padding-top:70px;
     }
   }
 @media all and (max-width:300px){
@@ -27,10 +43,9 @@
     }
     h1 {
         float: unset;
-        padding: unset;
     }
     nav {
         float: unset;
-        padding: unset;
+
     }
 }
