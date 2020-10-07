@@ -1,4 +1,19 @@
 .registration-form{
     background-color: lightblue;
-    
+    padding: 50px;
+    margin:50px
+}
+.form-line{
+    text-align: center;
+    padding: 10px;
+}
+@media all and (min-width:600px){
+
+}
+@media all and (max-width:600px)and (min-width:300px){
+
+  }
+@media all and (max-width:300px){
+
+
 }
