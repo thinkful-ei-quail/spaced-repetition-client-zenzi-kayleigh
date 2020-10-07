@@ -41,7 +41,7 @@ class Header extends Component {
   render() {
     return (
       <header className="header-container">
-        <h1>
+        <h1 className="header">
           <Link to='/'>
             Langful
           </Link>
