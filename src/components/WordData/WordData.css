@@ -1,0 +1,13 @@
+.row {
+    list-style-type: none;
+    overflow: hidden;
+}
+.column{
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.words-table ,ul.row , ul.row > *{
+    background-color: lightblue;
+    padding:1px;
+}
