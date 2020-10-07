@@ -11,3 +11,7 @@
     background-color: lightblue;
     padding:1px;
 }
+div.table-header , div.table-header > *{
+    font-weight: bold;
+    padding-bottom: 8px;
+}
