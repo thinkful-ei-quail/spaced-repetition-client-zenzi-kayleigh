@@ -19,13 +19,13 @@ class WordData extends Component {
                 <ul>
                     {words.map(word =>
                         <li className="row" key={word.id}>
-                            <h4 className="word column left">
+                            <h4 className="word column">
                                 {word.original}
                             </h4>
-                            <p className="correct-count column middle">
+                            <p className="correct-count column">
                                 correct answer count: {word.correct_count}    
                             </p>
-                            <p className="incorrect-count column right">
+                            <p className="incorrect-count column">
                                 incorrect answer count: {word.incorrect_count}
                             </p>
                         </li>
