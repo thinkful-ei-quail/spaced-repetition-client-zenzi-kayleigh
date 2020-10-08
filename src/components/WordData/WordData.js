@@ -15,44 +15,20 @@ class WordData extends Component {
    
             return (
             <div className='words-table'>
+                <h3>Words to practice</h3>
                 <ul className="row">
-                    <div className="word column left table-header">
-                        <li>
-                            Word
-                        </li>
-                    </div>
-
-                    <div className="correct-count column middle table-header">
-                        <li>
-                            # Correct:
-                        </li>
-                    </div>
-
-                    <div className="incorrect-count column right table-header">
-                        <li>
-                            # Incorrect:
-                        </li>
-                    </div>
-
                     {words.map(word =>
-                        <>
-                            <div className="word column left">
-                                <li>
-                                    {word.original}
-                                </li>
-                            </div>
-
-                            <div className="correct-count column middle">
-                                <li>
-                                    {word.correct_count}
-                                </li>
-                            </div>
-                            <div className="incorrect-count column right">
-                                <li>
-                                    {word.incorrect_count}
-                                </li>
-                            </div>
-                        </>
+                        <li>
+                            <h4 className="word column left">
+                                {word.original}
+                            </h4>
+                            <p className="correct-count column middle">
+                                correct answer count: {word.correct_count}    
+                            </p>
+                            <p className="incorrect-count column right">
+                                incorrect answer count: {word.incorrect_count}
+                            </p>
+                        </li>
                     )}
 
                 </ul>               
