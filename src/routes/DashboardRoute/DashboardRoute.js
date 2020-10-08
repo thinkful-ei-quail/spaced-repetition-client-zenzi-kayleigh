@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import LanguageContext from '../../contexts/LanguageContext';
 import WordData from '../../components/WordData/WordData'
 
@@ -29,13 +30,17 @@ class DashboardRoute extends Component {
         return (
           <section className="language-component">
             <div className="language-header">
-              <h3>{name}</h3>          
+              <h2>{name}</h2>          
             </div>
             {toggleLanguageComponent()}
-            <p className="total-score">Total Score:{total_score}</p>
-            <button className="start-learning-button">
-              START PRACTICING
-            </button>
+            <p className="total-score">Total correct answers: {total_score}</p>
+            <Link
+              onClick={this.handleLogoutClick}
+              to='/learn'>
+              <button>
+                Start practicing
+              </button>            
+            </Link>
           </section>
         );
       } else {
