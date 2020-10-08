@@ -16,9 +16,9 @@ class WordData extends Component {
             return (
             <div className='words-table'>
                 <h3>Words to practice</h3>
-                <ul className="row">
+                <ul>
                     {words.map(word =>
-                        <li>
+                        <li className="row" key={word.id}>
                             <h4 className="word column left">
                                 {word.original}
                             </h4>
