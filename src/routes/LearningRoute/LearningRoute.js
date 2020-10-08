@@ -16,24 +16,25 @@ class LearningRoute extends Component {
   updateResultOnSubmit = () =>{
     if (this.state.input === this.context.original){
       this.setState({input_result: true})
+    }else{
+      this.setState({input_result: false})
     }
-    this.setState({input_result: false})
   };
   resetResultOnNext = () =>{
     this.setState({input_result: null})
   }
   render() {
     const renderPage = () =>{
-      // if(this.context.head === null){
-      //   return (
-      //     <h2>Content Loading...</h2>
-      //   )
-      // }
+      if(this.context.head === null){
+        return (
+          <h2>Content Loading...</h2>
+        )
+      }
       if (this.state.input_result === null){
         return (
           <section>
-            <h2>Translate the word: Salve</h2>
-            <form>
+            <h2>Translate the word:</h2>
+            <form onSubmit={ ()=>this.updateResultOnSubmit()}>
               <label>
                 What's the translation for this word?
               </label>
@@ -79,6 +80,7 @@ class LearningRoute extends Component {
         )
       }
       if (this.state.input_result === false){
+        console.log(this.state.input)
         return (
           <section>
             <h2>Good try, but not quite right {`:(`}</h2>
