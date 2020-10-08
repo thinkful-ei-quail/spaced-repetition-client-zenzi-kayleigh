@@ -5,6 +5,7 @@ import config from '../config'
 
 const LanguageContext = React.createContext({
   language: null,
+  head: null,
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -18,6 +19,7 @@ export class LanguageProvider extends Component {
     super(props)
     this.state = {
       language: null,
+      head: null,
     };
   }
 
@@ -32,6 +34,18 @@ export class LanguageProvider extends Component {
       console.log('language', language)
       this.setState({language });
     })
+    fetch(`${config.API_ENDPOINT}/language/head`,{
+      headers:{
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+    .then(response => response.json())
+    .then((head) => {
+      console.log('head', head)
+      this.setState({head });
+    })
+
+
     .catch((error) => {
       console.error(error.message );
     });
@@ -53,6 +67,7 @@ export class LanguageProvider extends Component {
   render() {
     const value = {
       language: this.state.language,
+      head: this.state.head,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
