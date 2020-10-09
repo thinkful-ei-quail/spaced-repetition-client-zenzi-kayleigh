@@ -121,7 +121,7 @@ class LearningRoute extends Component {
               <p>Your Score Is Now:</p>
               <p>0%</p>
             </div>
-            <buttonon Click={()=>this.resetResultOnNext()}>
+            <button Click={()=>this.resetResultOnNext()}>
               Try another word!
             </button>
           </section>
