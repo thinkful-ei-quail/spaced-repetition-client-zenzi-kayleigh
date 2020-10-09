@@ -25,12 +25,13 @@ export class LanguageProvider extends Component {
       head: null,
       headRes: null,
       getheadRes: () => {},
+      fetchHead: () => {},
       setError: () => {},
       clearError: () => {},
     };
   }
 
-  componentDidMount() {
+  fetchLanguage = () => {
     fetch(`${config.API_ENDPOINT}/language`,{
       headers:{
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
@@ -41,6 +42,12 @@ export class LanguageProvider extends Component {
       console.log('language', language)
       this.setState({language });
     })
+    .catch((error) => {
+      console.error(error.message );
+    });
+  }
+
+  fetchHead = () => {
     fetch(`${config.API_ENDPOINT}/language/head`,{
       headers:{
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
@@ -51,11 +58,14 @@ export class LanguageProvider extends Component {
       console.log('head', head)
       this.setState({head });
     })
-
-
     .catch((error) => {
       console.error(error.message );
     });
+  }
+
+  componentDidMount() {
+    this.fetchLanguage()
+    this.fetchHead()
   }
 
   componentWillUnmount() {
@@ -76,6 +86,7 @@ export class LanguageProvider extends Component {
     this.setState({headRes: {res}})
   }
 
+
   render() {
     const value = {
       error: this.state.error,
@@ -83,6 +94,7 @@ export class LanguageProvider extends Component {
       head: this.state.head,
       headRes: this.state.headRes,
       getHeadRes: this.getHeadRes,
+      fetchHead: this.fetchLanguage,
       setError: this.setError,
       clearError: this.clearError,
     }
