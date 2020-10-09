@@ -9,6 +9,7 @@ class LearningRoute extends Component {
     this.state = {
       guess: '',
       is_correct: null,
+      headRes: null,
     };
   }
   static contextType = LanguageContext;
@@ -30,7 +31,7 @@ class LearningRoute extends Component {
     })
     .then((response) => {
       this.context.getHeadRes(response);
-      console.log('headRes',this.context.headRes)
+      this.setState({headRes: {response}})
       this.updateResultOnSubmit()
     });
   };
@@ -45,6 +46,7 @@ class LearningRoute extends Component {
     this.setState({is_correct: null})
   }
   render() {
+    
     const renderPage = () =>{
       if(this.context.head === null){
         return (
@@ -82,20 +84,23 @@ class LearningRoute extends Component {
         )
       }
       if (this.state.is_correct === true){
+        console.log(this.state.headRes)
+        const { nextWord}= this.context.head
+        const { answer , totalScore } = this.state.headRes.response
         return (
           <section>
             <h2>You were correct: {`:D`}</h2>
             <div className='response'>
               <h4>The correct translation for</h4>
-              <p>Salve</p>
+              <p>{nextWord}</p>
               <h4>was</h4>
-              <p>Hello</p>
+              <p>{answer}</p>
               <h4>You chose</h4>
-              <p>Hello</p>              
+              <p>{this.state.guess.value}</p>              
             </div>
             <div className='active-score-container'>
               <p>Your Score Is Now:</p>
-              <p>20%</p>
+              <p>{totalScore}%</p>
             </div>
             <button onClick={()=>this.resetResultOnNext()}>
               Try another word!
