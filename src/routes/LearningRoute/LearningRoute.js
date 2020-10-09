@@ -58,7 +58,7 @@ class LearningRoute extends Component {
         return (
           <section>
             <h2>Translate the word:</h2>
-            <span>{nextWord}</span>
+            <span><h3>{nextWord}</h3></span>
             <form onSubmit={ (e)=>this.submitGuess(e)}>
               <label htmlFor='learn-guess-input'>
                 What's the translation for this word?
@@ -84,7 +84,6 @@ class LearningRoute extends Component {
         )
       }
       if (this.state.is_correct === true){
-        console.log(this.state.headRes)
         const { nextWord}= this.context.head
         const { answer , totalScore } = this.state.headRes.response
         return (
@@ -96,7 +95,7 @@ class LearningRoute extends Component {
               <h4>was</h4>
               <p>{answer}</p>
               <h4>You chose</h4>
-              <p>{this.state.guess.value}</p>              
+              <p>{this.state.guess.val}</p>              
             </div>
             <div className='active-score-container'>
               <p>Your Score Is Now:</p>
@@ -109,21 +108,22 @@ class LearningRoute extends Component {
         )
       }
       if (this.state.is_correct === false){
-        console.log(this.state.guess)
+        const { nextWord}= this.context.head
+        const { answer , totalScore } = this.state.headRes.response
         return (
           <section>
             <h2>Good try, but not quite right {`:(`}</h2>
             <div className='response'>
               <h4>The correct translation for</h4>
-              <p>Salve</p>
+              <p>{nextWord}</p>
               <h4>was</h4>
-              <p>Hello</p>
+              <p>{answer}</p>
               <h4>You chose</h4>
-              <p>Night</p>              
+              <p>{this.state.guess.val}</p>              
             </div>
             <div className='active-score-container'>
               <p>Your Score Is Now:</p>
-              <p>0%</p>
+              <p>{totalScore}%</p>
             </div>
             <button onClick={()=>this.resetResultOnNext()}>
               Try another word!
