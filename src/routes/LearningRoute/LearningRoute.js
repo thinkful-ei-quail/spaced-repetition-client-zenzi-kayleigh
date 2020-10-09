@@ -42,8 +42,10 @@ class LearningRoute extends Component {
       this.setState({is_correct: false})
     }
   };
+
   resetResultOnNext = () =>{
-    this.setState({is_correct: null})
+    window.location.reload(false)
+    //this.setState({is_correct: null, headRes: null})
   }
   render() {
     
@@ -95,7 +97,7 @@ class LearningRoute extends Component {
               <h4>was</h4>
               <p>{answer}</p>
               <h4>You chose</h4>
-              <p>{this.state.guess.val}</p>              
+              <p>{this.state.guess.value}</p>              
             </div>
             <div className='active-score-container'>
               <p>Your Score Is Now:</p>
@@ -119,7 +121,7 @@ class LearningRoute extends Component {
               <h4>was</h4>
               <p>{answer}</p>
               <h4>You chose</h4>
-              <p>{this.state.guess.val}</p>              
+              <p>{this.state.guess.value}</p>              
             </div>
             <div className='active-score-container'>
               <p>Your Score Is Now:</p>
