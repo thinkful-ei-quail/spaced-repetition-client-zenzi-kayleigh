@@ -70,7 +70,12 @@ export class LanguageProvider extends Component {
   }
 
   handleAddGuess = () => {
-    fetch(`${config.API_ENDPOINT}/language/guess`)
+    fetch(`${config.API_ENDPOINT}/language/guess`,{
+      headers: {
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+
     .then((res) => res.json())
     .then((guess) => {
       this.setState({
