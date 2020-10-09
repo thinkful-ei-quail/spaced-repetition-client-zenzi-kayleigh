@@ -6,7 +6,9 @@ import config from '../config'
 const LanguageContext = React.createContext({
   language: null,
   head: null,
+  headRes: null,
   error: null,
+  getHeadRes: () => {},
   setError: () => {},
   clearError: () => {},
 })
@@ -18,9 +20,11 @@ export class LanguageProvider extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      error: null,
       language: null,
-      guess: null,
       head: null,
+      headRes: null,
+      getheadRes: () => {},
       setError: () => {},
       clearError: () => {},
     };
@@ -68,12 +72,17 @@ export class LanguageProvider extends Component {
     this.setState({ error: null })
   }
 
+  getHeadRes = res => {
+    this.setState({headRes: {res}})
+  }
 
   render() {
     const value = {
+      error: this.state.error,
       language: this.state.language,
       head: this.state.head,
-      error: this.state.error,
+      headRes: this.state.headRes,
+      getHeadRes: this.getHeadRes,
       setError: this.setError,
       clearError: this.clearError,
     }
