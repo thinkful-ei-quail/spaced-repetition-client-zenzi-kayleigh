@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import config from '../../config'
 import LanguageContext from '../../contexts/LanguageContext'
+import TokenService from '../../services/token-service'
 
 class LearningRoute extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class LearningRoute extends Component {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         guess: `${this.state.guess.value}`,
@@ -58,7 +60,7 @@ class LearningRoute extends Component {
           <section>
             <h2>Translate the word:</h2>
             <span>{nextWord}</span>
-            <form onSubmit={ ()=>this.submitGuess()}>
+            <form onSubmit={ (e)=>this.submitGuess(e)}>
               <label htmlFor='learn-guess-input'>
                 What's the translation for this word?
               </label>
