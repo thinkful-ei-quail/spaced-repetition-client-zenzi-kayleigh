@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
-
+.nav-item{
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: underline;
+}
 .nav a, .nav a:hover, .nav a:focus, .nav a:active {
-    text-decoration: none;
+
     color: black;
 }
 .header a, .header a:hover, .header a:focus, .header a:active {
