@@ -34,7 +34,7 @@ class LearningRoute extends Component {
       this.updateResultOnSubmit()
     });
   };
-  updateResultOnSubmit = (answer) =>{
+  updateResultOnSubmit = () =>{
     if (this.context.headRes.res.isCorrect){
       this.setState({is_correct: true})
     }else{
