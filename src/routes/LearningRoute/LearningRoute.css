@@ -1,0 +1,30 @@
+.guess-container{
+    background-color: lightblue;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding:10px;
+}
+
+.guess-input{
+    padding:20%;
+}
+.guess-header{
+    margin-top: 25%;
+
+}
+.guess-header, .guess-word{
+    text-align: center;
+}
+.guess-data, .guess-container, .guess-container > * {
+    text-align: center;
+}
+
+.response{
+    font-style: oblique;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.guess-data{
+    font-style: normal;
+    font-weight: bold;
+}
