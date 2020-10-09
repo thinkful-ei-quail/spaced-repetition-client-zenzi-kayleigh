@@ -20,6 +20,10 @@ export class LanguageProvider extends Component {
     this.state = {
       language: null,
       head: null,
+      guess: null,
+      setError: () => {},
+      clearError: () => {},
+      addGuess: () => {},
     };
   }
 
@@ -64,6 +68,20 @@ export class LanguageProvider extends Component {
   clearError = () => {
     this.setState({ error: null })
   }
+
+  handleAddGuess = () => {
+    fetch(`${config.API_ENDPOINT}/language/guess`)
+    .then((res) => res.json())
+    .then((guess) => {
+      this.setState({
+        guess,
+      });
+    })
+    .catch((e) => {
+      console.log("Error loading guess data");
+    });
+  }
+
   render() {
     const value = {
       language: this.state.language,
@@ -71,6 +89,7 @@ export class LanguageProvider extends Component {
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
+      addGuess: this.handleAddGuess,
     }
     return (
       <LanguageContext.Provider value={value}>
