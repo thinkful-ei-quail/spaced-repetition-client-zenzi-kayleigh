@@ -23,22 +23,18 @@ class LearningRoute extends Component {
         "Content-Type": "application/json",
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
-        guess: `${this.state.guess.value}`,
-      }),
+      body: JSON.stringify(this.state.guess),
     })
     .then((res) => {
       return res.json();
+    })
+    .then((response) => {
+      this.context.addGuess();//do i do this?
+      this.updateResultOnSubmit()
     });
-    // .then((response) => {
-    //   this.context.addGuess();
-    //   this.setState({
-    //     redirect: "/learn",
-    //   });
-    // })
   };
   updateResultOnSubmit = () =>{
-    if (this.state.guess === 'test'){
+    if (this.state.guess === 'salve'){
       this.setState({is_correct: true})
     }else{
       this.setState({is_correct: false})
@@ -123,7 +119,7 @@ class LearningRoute extends Component {
               <p>Your Score Is Now:</p>
               <p>0%</p>
             </div>
-            <button Click={()=>this.resetResultOnNext()}>
+            <button onClick={()=>this.resetResultOnNext()}>
               Try another word!
             </button>
           </section>
