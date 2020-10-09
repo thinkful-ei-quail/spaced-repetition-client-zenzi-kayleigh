@@ -29,12 +29,13 @@ class LearningRoute extends Component {
       return res.json();
     })
     .then((response) => {
-      this.context.addGuess();//do i do this?
+      this.context.getHeadRes(response);
+      console.log('headRes',this.context.headRes)
       this.updateResultOnSubmit()
     });
   };
-  updateResultOnSubmit = () =>{
-    if (this.state.guess === 'salve'){
+  updateResultOnSubmit = (answer) =>{
+    if (this.context.headRes.res.isCorrect){
       this.setState({is_correct: true})
     }else{
       this.setState({is_correct: false})
