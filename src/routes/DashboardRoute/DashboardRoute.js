@@ -8,10 +8,19 @@ class DashboardRoute extends Component {
     super(props)
     this.state = {
         isExpanded: true,
+
     };
 }
+
+  refreshPage = () => {
+    if(!window.location.hash) {
+      window.location = window.location + '#loaded';
+      window.location.reload();
+  }
+  }
   static contextType = LanguageContext
   render() {
+
     console.log(this.context.language)
 
     const toggleLanguageComponent = () => {
@@ -25,10 +34,13 @@ class DashboardRoute extends Component {
     }
     const renderPage = () => {
 
-      if (this.context.language !== null ){
+      if (this.context !== null && this.context.language !== null && this.context.language.language !== undefined){
+    
         const {name , total_score} = this.context.language.language;     
         return (
+
           <section className="language-component">
+            {this.refreshPage()}
             <div className="language-header">
               <h2>{name}</h2>          
             </div>
