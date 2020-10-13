@@ -33,14 +33,14 @@ class DashboardRoute extends Component {
       }
     }
     const renderPage = () => {
-
+      this.refreshPage()
       if (this.context !== null && this.context.language !== null && this.context.language.language !== undefined){
     
         const {name , total_score} = this.context.language.language;     
         return (
 
           <section className="language-component">
-            {this.refreshPage()}
+ 
             <div className="language-header">
               <h2>{name}</h2>          
             </div>
