@@ -13,7 +13,7 @@ ReactDOM.render(
   <BrowserRouter>
     <UserProvider>
       <LanguageProvider>
-              <App />
+        <App />
       </LanguageProvider>
     </UserProvider>
   </BrowserRouter>,
