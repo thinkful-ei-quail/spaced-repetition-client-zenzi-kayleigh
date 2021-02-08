@@ -2,31 +2,23 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import UserContext from '../../contexts/UserContext'
-import './Header.css'
-
-
-
+import '../../styles/dist/App.css'
 class Header extends Component {
   static contextType = UserContext
-
   handleLogoutClick = () => {
     this.context.processLogout()
   }
-
   renderLogoutLink() {
     return (
-      
       <div>
-
         <nav>
           <Link
-            className='nav-item'
+            className='link'
             onClick={this.handleLogoutClick}
             to='/login'>
             Logout
           </Link>
-
-          <span className='nav-item'>
+          <span className='link'>
             {this.context.user.name}
           </span>
         </nav>
@@ -37,22 +29,22 @@ class Header extends Component {
   renderLoginLink() {
     return (
       <nav>
-        <Link to='/login' className='nav-item'>Login</Link>
+        <Link to='/login' className='link'>Login</Link>
         {' '}
-        <Link to='/register' className='nav-item'>Sign up</Link>
+        <Link to='/register' className='link'>Sign up</Link>
       </nav>
     )
   }
 
   render() {
     return (
-      <header className="header-container">
-        <h1 className="header">
-          <Link to='/'>
+      <header>
+        <h1 className="logo">
+          <Link to='/' className='link'>
             Langful
           </Link>
         </h1>
-        <div className='nav'>
+        <div className='nav-container'>
           {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
             : this.renderLoginLink()}

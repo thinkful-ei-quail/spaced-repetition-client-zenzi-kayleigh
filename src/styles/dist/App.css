@@ -1,0 +1,55 @@
+@import url("https://use.typekit.net/blj6xkx.css");
+header {
+  background-color: #e6bfad;
+  color: white;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .logo {
+  font-family: amatic-sc, sans-serif;
+  font-size: 6vh;
+  padding: 0vh 0vh 2vh 1.2vh;
+}
+
+header .logo a, header .logo a:hover, header .logo a:focus, header .logo a:active {
+  text-decoration: none;
+  color: black;
+}
+
+header .logo a:hover {
+  color: white;
+}
+
+header .nav-container {
+  font-family: amatic-sc, sans-serif;
+  position: absolute;
+  right: 0;
+  float: right;
+}
+
+header .nav-container a, header .nav-container a:hover, header .nav-container a:focus, header .nav-container a:active {
+  text-decoration: none;
+  color: black;
+}
+
+header .nav-container a:hover {
+  color: white;
+}
+
+header .nav-container nav .link {
+  padding: 7.5vh 1vh;
+  float: left;
+  font-size: 2vh;
+}
+
+@media (min-width: 375px) {
+  header .nav-container nav .link {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=App.css.map */

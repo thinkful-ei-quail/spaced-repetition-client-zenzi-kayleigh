@@ -1,0 +1,62 @@
+
+@import url("https://use.typekit.net/blj6xkx.css")
+
+//MIXINS
+//links
+@mixin normalize-link
+    a, a:hover, a:focus, a:active
+        text-decoration: none
+        color: black
+    a:hover
+        color: white
+        
+//media queries
+$breakpoints: ( 'xsmall': (max-width: 375px), 'small':  ( min-width:  375px ),'medium': ( min-width:  750px ),'large':  ( min-width: 1200px ))!default
+@mixin respond-to($breakpoint) 
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) 
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} 
+      @content
+    
+  // If the key doesn't exist in the map
+  @else 
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}."
+//VARIABLES 
+//fonts
+$amatic: amatic-sc, sans-serif
+//colors
+$blue: #add8e6
+$pink: #e6bfad
+$tan: #e6dcad
+$purple: #d0ade6
+//CONFIGURE STYLING
+header
+    background-color: $pink
+    color: white
+    height: 10vh
+    width: 100%
+    position: fixed
+    display: flex
+    .logo
+        @include normalize-link
+        font-family: $amatic
+        font-size: 6vh
+        padding: 0vh 0vh 2vh 1.2vh
+    .nav-container
+        @include normalize-link
+        font-family: $amatic
+        position: absolute
+        right: 0
+        float: right
+        nav .link
+            padding: 7.5vh 1vh 
+            float: left
+            font-size: 2vh
+            @include respond-to('small')
+                text-align: center
+
+        
+                
+    
+  
