@@ -8,17 +8,19 @@ header
     display: flex
     .logo
         @include normalize-link
-        font-family: $amatic
+        @include amatic-bold
         font-size: 6vh
         padding: 0vh 0vh 2vh 1.2vh
     .nav-container
         @include normalize-link
-        font-family: $amatic
+        @include amatic-bold
         position: absolute
         right: 0
         float: right
         nav .link
-            padding: 7.5vh 1vh 
+            padding: 6.5vh 1vh
             float: left
-            font-size: 2vh
+            font-size: 3vh
             text-align: center
+        nav .text
+            color: black

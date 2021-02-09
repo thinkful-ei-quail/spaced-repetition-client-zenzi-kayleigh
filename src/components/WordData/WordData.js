@@ -1,49 +1,40 @@
 import React, { Component } from 'react'
-import './WordData.css';
-import LanguageContext from '../../contexts/LanguageContext';
-
+import LanguageContext from '../../contexts/LanguageContext'
+import '../../styles/dist/WordData.css'
+import { FcCheckmark, FcCancel } from "react-icons/fc"
 class WordData extends Component {
-
     static contextType = LanguageContext
-
     render() {
         const renderPage = () => {
-
-        if (this.context.language !== null ){
-            const {words} = this.context.language;
-            
-   
-            return (
-            <div className='words-table'>
-                <h3>Words to practice</h3>
-                <ul>
-                    {words.map(word =>
-                        <li className="row" key={word.id}>
-                            <h4 className="word column">
-                                {word.original}
-                            </h4>
-                            <p className="correct-count column">
-                                correct answer count: {word.correct_count}    
-                            </p>
-                            <p className="incorrect-count column">
-                                incorrect answer count: {word.incorrect_count}
-                            </p>
-                        </li>
-                    )}
-
-                </ul>               
-            </div>
-            );
-        } else {
-            return (
-            <h3>Content Loading...</h3>
-            )
+            if (this.context.language !== null ){
+                const {words} = this.context.language;
+                return (
+                    <table className="table">
+                        <caption>Words to practice</caption>
+                        <thead>
+                            <tr>
+                                <th className='word'>Word</th>
+                                <th>{<FcCheckmark/>? <FcCheckmark/>:'correct'}</th>
+                                <th>{<FcCancel/>? <FcCancel/>:'incorrect'}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {words.map(word =>
+                                <tr className="row" key={word.id}>
+                                    <td className="word">{word.original}</td>
+                                    <td>{word.correct_count}</td>
+                                    <td>{word.incorrect_count}</td>
+                                </tr>
+                            )}
+                        </tbody>
+                        <tfoot>
+                            <tr><td colSpan='3'>Total answers correct: {this.props.total}</td></tr>
+                        </tfoot>
+                    </table>
+                );
+            } else {return (<h3>Content Loading...</h3>)}
         }
-        }
-        return (
-        <>
-            {renderPage()}
-        </>
+        return (<>{renderPage()}</>
         );
     }
 }

@@ -39,7 +39,6 @@ export class LanguageProvider extends Component {
     })
     .then(response => response.json())
     .then((language) => {
-      console.log('language', language)
       this.setState({language });
     })
     .catch((error) => {
@@ -55,7 +54,6 @@ export class LanguageProvider extends Component {
     })
     .then(response => response.json())
     .then((head) => {
-      console.log('head', head)
       this.setState({head });
     })
     .catch((error) => {

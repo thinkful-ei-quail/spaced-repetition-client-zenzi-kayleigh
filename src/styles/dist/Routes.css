@@ -1,0 +1,27 @@
+@import url("https://use.typekit.net/blj6xkx.css");
+.container {
+  padding-top: 10vh;
+  text-align: center;
+}
+
+.container .link, .container .link:hover, .container .link:focus, .container .link:active {
+  text-decoration: none;
+  color: black;
+}
+
+.container .icon {
+  font-size: 3vh;
+}
+
+.container .summary {
+  text-align: center;
+}
+
+.container .register .header, .container .header {
+  font-family: amatic-sc, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 5vh;
+}
+/*# sourceMappingURL=Routes.css.map */

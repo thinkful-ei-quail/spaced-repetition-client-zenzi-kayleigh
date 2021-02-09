@@ -1,0 +1,26 @@
+@import url("https://use.typekit.net/blj6xkx.css");
+table {
+  width: 80vw;
+  margin: 0vw 10vw 0vw 10vw;
+  border-collapse: collapse;
+}
+
+table caption, table tfoot, table thead {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+table thead, table tfoot {
+  border-top: 2px solid #d0ade6;
+  border-bottom: 2px solid #d0ade6;
+}
+
+table tfoot {
+  background-color: #e6dcad;
+}
+
+table .word {
+  text-transform: uppercase;
+  text-align: left;
+}
+/*# sourceMappingURL=WordData.css.map */

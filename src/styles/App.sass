@@ -1,6 +1,14 @@
 
 @import url("https://use.typekit.net/blj6xkx.css")
 
+//VARIABLES 
+//colors
+$blue: #add8e6
+$pink: #e6bfad
+$tan: #e6dcad
+$purple: #d0ade6
+//spacing
+$under-header: 10vh
 //MIXINS
 //links
 @mixin normalize-link
@@ -18,23 +26,16 @@ $breakpoints: ( 'xsmall': (max-width: 375px), 'small':  ( min-width:  375px ),'m
     // Prints a media query based on the value
     @media #{inspect(map-get($breakpoints, $breakpoint))} 
       @content
-    
   // If the key doesn't exist in the map
   @else 
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}."
-//VARIABLES 
 //fonts
-$amatic: amatic-sc, sans-serif
-//colors
-$blue: #add8e6
-$pink: #e6bfad
-$tan: #e6dcad
-$purple: #d0ade6
+@mixin amatic
+    font-family: amatic-sc, sans-serif
+    font-weight: 400
+    font-style: normal
+@mixin amatic-bold
+    @include amatic
+    font-weight: 700
 //CONFIGURE STYLING
-.registration
-    padding-top: 10vh
-    .summary
-        text-align: center
-    .register
-        .header
 

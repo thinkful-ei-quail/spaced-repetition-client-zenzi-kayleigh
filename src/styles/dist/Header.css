@@ -12,6 +12,9 @@ header {
 
 header .logo {
   font-family: amatic-sc, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: 700;
   font-size: 6vh;
   padding: 0vh 0vh 2vh 1.2vh;
 }
@@ -27,6 +30,9 @@ header .logo a:hover {
 
 header .nav-container {
   font-family: amatic-sc, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: 700;
   position: absolute;
   right: 0;
   float: right;
@@ -42,9 +48,13 @@ header .nav-container a:hover {
 }
 
 header .nav-container nav .link {
-  padding: 7.5vh 1vh;
+  padding: 6.5vh 1vh;
   float: left;
-  font-size: 2vh;
+  font-size: 3vh;
   text-align: center;
+}
+
+header .nav-container nav .text {
+  color: black;
 }
 /*# sourceMappingURL=Header.css.map */

@@ -3,7 +3,7 @@ import config from '../../config'
 import LanguageContext from '../../contexts/LanguageContext'
 import TokenService from '../../services/token-service'
 import './LearningRoute.css'
-
+import '../../styles/dist/Routes.css'
 class LearningRoute extends Component {
   constructor(props) {
     super(props)
@@ -59,7 +59,7 @@ class LearningRoute extends Component {
       if (this.state.is_correct === null){
         const { nextWord, wordCorrectCount,wordIncorrectCount, totalScore}= this.context.head
         return (
-          <section>
+          <section className='container'>
             <h2 className='guess-header'>Translate the word:</h2>
             <span><h3 className='guess-word'>{nextWord}</h3></span>
             <div className='guess-container'>
@@ -95,7 +95,7 @@ class LearningRoute extends Component {
         const { nextWord}= this.context.head
         const { answer , totalScore } = this.state.headRes.response
         return (
-          <section>
+          <section className='container'>
             <h2 className='guess-header'>You were correct! {`:D`}</h2>
             <div className='response DisplayFeedback'>
               <p>The correct translation for</p>
@@ -120,7 +120,7 @@ class LearningRoute extends Component {
         const { nextWord}= this.context.head
         const { answer , totalScore } = this.state.headRes.response
         return (
-          <section>
+          <section className='container'>
             <h2 className='guess-header'>Good try, but not quite right {`:(`}</h2>
             <div className='guess-container'>
               <div className='response DisplayFeedback'>
