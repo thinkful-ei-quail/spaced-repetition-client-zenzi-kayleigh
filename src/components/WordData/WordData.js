@@ -9,7 +9,7 @@ class WordData extends Component {
             if (this.context.language !== null ){
                 const {words} = this.context.language;
                 return (
-                    <table className="table">
+                    <table className="word-table">
                         <caption>Words to practice</caption>
                         <thead>
                             <tr>
@@ -28,7 +28,7 @@ class WordData extends Component {
                             )}
                         </tbody>
                         <tfoot>
-                            <tr><td colSpan='3'>Total answers correct: {this.props.total}</td></tr>
+                            <tr><td colSpan='3'>Total correct: {this.props.total}</td></tr>
                         </tfoot>
                     </table>
                 );

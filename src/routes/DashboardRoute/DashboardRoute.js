@@ -31,7 +31,7 @@ class DashboardRoute extends Component {
         return (
           <>
             <p className="total-score">Total answers correct: {total}</p>
-            <BsChevronBarDown title='Expand' className='icon' onClick={()=>this.setState({isExpanded: true})}/><Link className='link' to='/learn'><BsFillPlayFill title='Begin' className='icon'/></Link>
+            <BsChevronBarDown title='Expand' className='icon' onClick={()=>this.setState({isExpanded: true})}/><Link className='link' to='/learn' test={'test'}><BsFillPlayFill title='Begin' className='icon'/></Link>
           </>
         )
       }

@@ -62,8 +62,10 @@ class LearningRoute extends Component {
       }
       if (this.state.is_correct === null){
         const { nextWord, wordCorrectCount,wordIncorrectCount, totalScore}= this.context.head
+        const {name: language} = this.context.language.language
         return(
           <Question
+            language={language}
             nextWord={nextWord}
             wordCorrectCount={wordCorrectCount}
             wordIncorrectCount={wordIncorrectCount}

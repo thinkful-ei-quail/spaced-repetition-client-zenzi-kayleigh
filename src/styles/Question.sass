@@ -1,0 +1,40 @@
+@import ./App
+
+.question
+    .header
+    .border
+        width: 60vw
+        padding: 5vw 5vw 5vw 5vw
+        margin: 0vw 15vw 0vw 15vw
+        border: 5px solid $purple 
+        form
+            label
+                @include nunito
+            div
+                input
+                    margin-top: 2vw
+                    padding-top: .2vw
+                    border: 1px solid $tan
+                    width: 40vw
+                    display: inline-block
+                .purple-button
+                    @include purple-button
+                    .icon
+                        font-size: 2vh
+                        font-weight: bold
+        .score-table
+            width: 50vw
+            margin: 4vw 5vw 0vw 5vw
+            border-collapse: collapse
+            caption
+                background-color: $blue
+                opacity: .8
+            caption, tfoot
+                text-transform: uppercase
+                text-align: center
+            tbody
+                border-top: 2px solid $tan
+                border-bottom: 2px solid $tan
+
+            
+        

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 class Result extends Component {
     render() {
         return(
@@ -17,7 +16,7 @@ class Result extends Component {
                     <p>Your total score is:</p>
                     <p className='guess-data'> {this.props.totalScore}</p>
                 </div>
-                <button onClick={()=>this.props.resetResultOnNext()}>
+                <button className='purple-button' onClick={()=>this.props.resetResultOnNext()}>
                 Try another word!
                 </button>
             </section>

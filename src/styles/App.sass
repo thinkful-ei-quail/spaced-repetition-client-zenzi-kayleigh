@@ -1,4 +1,3 @@
-
 @import url("https://use.typekit.net/blj6xkx.css")
 
 //VARIABLES 
@@ -10,6 +9,18 @@ $purple: #d0ade6
 //spacing
 $under-header: 10vh
 //MIXINS
+//buttons
+@mixin purple-button
+    display: inline-block
+    background-color: $purple
+    border: .094em solid $purple
+    text-transform: uppercase
+    text-decoration: none 
+    text-shadow: 0 .063em rgba(0,0,0,.3)
+    border-radius: .625em
+    box-shadow: 0 .375em .313em -0.313em rgba(0,0,0,.8), inset 0 .063em rgba(255,255,255,.4), inset 0 -0.188em rgba(0,0,0,.15)
+    cursor: pointer
+    
 //links
 @mixin normalize-link
     a, a:hover, a:focus, a:active
@@ -17,7 +28,6 @@ $under-header: 10vh
         color: black
     a:hover
         color: white
-        
 //media queries
 $breakpoints: ( 'xsmall': (max-width: 375px), 'small':  ( min-width:  375px ),'medium': ( min-width:  750px ),'large':  ( min-width: 1200px ))!default
 @mixin respond-to($breakpoint) 
@@ -37,5 +47,10 @@ $breakpoints: ( 'xsmall': (max-width: 375px), 'small':  ( min-width:  375px ),'m
 @mixin amatic-bold
     @include amatic
     font-weight: 700
+@mixin nunito
+    font-family: nunito, sans-serif
+    font-weight: 400
+    font-style: normal
+
 //CONFIGURE STYLING
 

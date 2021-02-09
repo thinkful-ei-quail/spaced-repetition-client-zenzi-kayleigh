@@ -1,0 +1,61 @@
+@import url("https://use.typekit.net/blj6xkx.css");
+.question .border {
+  width: 60vw;
+  padding: 5vw 5vw 5vw 5vw;
+  margin: 0vw 15vw 0vw 15vw;
+  border: 5px solid #d0ade6;
+}
+
+.question .border form label {
+  font-family: nunito, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.question .border form div input {
+  margin-top: 2vw;
+  padding-top: .2vw;
+  border: 1px solid #e6dcad;
+  width: 40vw;
+  display: inline-block;
+}
+
+.question .border form div .purple-button {
+  display: inline-block;
+  background-color: #d0ade6;
+  border: 0.094em solid #d0ade6;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 0 0.063em rgba(0, 0, 0, 0.3);
+  border-radius: .625em;
+  -webkit-box-shadow: 0 0.375em 0.313em -0.313em rgba(0, 0, 0, 0.8), inset 0 0.063em rgba(255, 255, 255, 0.4), inset 0 -0.188em rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.375em 0.313em -0.313em rgba(0, 0, 0, 0.8), inset 0 0.063em rgba(255, 255, 255, 0.4), inset 0 -0.188em rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.question .border form div .purple-button .icon {
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.question .border .score-table {
+  width: 50vw;
+  margin: 4vw 5vw 0vw 5vw;
+  border-collapse: collapse;
+}
+
+.question .border .score-table caption {
+  background-color: #add8e6;
+  opacity: .8;
+}
+
+.question .border .score-table caption, .question .border .score-table tfoot {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.question .border .score-table tbody {
+  border-top: 2px solid #e6dcad;
+  border-bottom: 2px solid #e6dcad;
+}
+/*# sourceMappingURL=Question.css.map */
