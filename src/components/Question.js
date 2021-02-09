@@ -4,12 +4,11 @@ class Question extends Component {
     render() {
         return (
             <section className='container'>
-              <h2 className='guess-header'>Translate the word:</h2>
-              <span><h3 className='guess-word'>{this.props.nextWord}</h3></span>
+              <h2 className='guess-header'>Translate the word: {this.props.nextWord.charAt(0).toUpperCase()+this.props.nextWord.substring(1).toLowerCase()}</h2>
               <div className='guess-container'>
                 <form className='guess-form' onSubmit={ (e)=>this.props.submitGuess(e)}>
                     <label htmlFor='learn-guess-input'>
-                      What's the translation for this word?
+                      What's the English translation for this word?
                     </label>
                   <div className='guess-input'>
                     <input 

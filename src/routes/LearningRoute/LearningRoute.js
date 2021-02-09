@@ -61,25 +61,29 @@ class LearningRoute extends Component {
         )
       }
       if (this.state.is_correct === null){
+        const { nextWord, wordCorrectCount,wordIncorrectCount, totalScore}= this.context.head
         return(
           <Question
-            nextWord={this.context.head.nextWord}
-            wordCorrectCount={this.context.head.wordCorrectCount}
-            wordIncorrectCount={this.context.head.wordIncorrectCount}
-            totalScore={this.context.head.totalScore}
+            nextWord={nextWord}
+            wordCorrectCount={wordCorrectCount}
+            wordIncorrectCount={wordIncorrectCount}
+            totalScore={totalScore}
             submitGuess={(e)=>{this.submitGuess(e)}}
             updateGuess={(e)=>{this.updateGuess(e)}}
           />
         )
       }
       if (this.state.is_correct === true || this.state.is_correct === false){
+        const {guess} = this.state.guess
+        const { nextWord}= this.context.head
+        const { answer , totalScore } = this.state.headRes.response
         return (
           <Result
             correct={this.state.is_correct}
-            guess={this.state.guess}
-            nextWord={this.context.nextWord}
-            answer={this.state.headRes.response.answer}
-            totalScore={this.state.headRes.response.totalScore}
+            guess={guess}
+            nextWord={nextWord}
+            answer={answer}
+            totalScore={totalScore}
             resetResultOnNext={(e)=>{this.resetResultOnNext(e)}}
           />  
         )
