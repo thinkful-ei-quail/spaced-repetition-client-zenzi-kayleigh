@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import config from '../../config'
 import LanguageContext from '../../contexts/LanguageContext'
 import TokenService from '../../services/token-service'
-import './LearningRoute.css'
+//import './LearningRoute.css'
 import '../../styles/dist/Routes.css'
+import { VscLoading } from "react-icons/vsc"
+import Result from '../../components/Result'
+import Question from '../../components/Question'
 class LearningRoute extends Component {
   constructor(props) {
     super(props)
@@ -43,106 +46,45 @@ class LearningRoute extends Component {
       this.setState({is_correct: false})
     }
   };
-
   resetResultOnNext = () =>{
     window.location.reload(false)
     //this.setState({is_correct: null, headRes: null})
-  }
+  };
   render() {
-    
     const renderPage = () =>{
       if(this.context.head === null){
         return (
-          <h2>Content Loading...</h2>
+          <div className='loading container'>
+            <VscLoading/>
+            <h2>Content Loading...</h2>
+          </div>
         )
       }
       if (this.state.is_correct === null){
-        const { nextWord, wordCorrectCount,wordIncorrectCount, totalScore}= this.context.head
-        return (
-          <section className='container'>
-            <h2 className='guess-header'>Translate the word:</h2>
-            <span><h3 className='guess-word'>{nextWord}</h3></span>
-            <div className='guess-container'>
-              <form className='guess-form' onSubmit={ (e)=>this.submitGuess(e)}>
-                  <label htmlFor='learn-guess-input'>
-                    What's the translation for this word?
-                  </label>
-                <div className='guess-input'>
-                  <input 
-                    type='text' 
-                    id='learn-guess-input'
-                    required
-                    onChange={(e) => this.updateGuess(e.target.value)}
-                  />
-                  <button
-                    type='submit'
-                  >
-                    Submit your answer
-                  </button>
-                </div>
-              </form>
-              <div className='inactive-score-container'>
-                <p>Your total score is: {totalScore-wordCorrectCount}</p>
-                <p>You have answered this word correctly {wordCorrectCount} times.</p>
-                <p>You have answered this word incorrectly {wordIncorrectCount} times.</p>
-              </div>
-            </div>
-          </section>     
+        return(
+          <Question
+            nextWord={this.context.head.nextWord}
+            wordCorrectCount={this.context.head.wordCorrectCount}
+            wordIncorrectCount={this.context.head.wordIncorrectCount}
+            totalScore={this.context.head.totalScore}
+            submitGuess={(e)=>{this.submitGuess(e)}}
+            updateGuess={(e)=>{this.updateGuess(e)}}
+          />
         )
       }
-      if (this.state.is_correct === true){
-        const {guess} = this.state.guess
-        const { nextWord}= this.context.head
-        const { answer , totalScore } = this.state.headRes.response
+      if (this.state.is_correct === true || this.state.is_correct === false){
         return (
-          <section className='container'>
-            <h2 className='guess-header'>You were correct! {`:D`}</h2>
-            <div className='response DisplayFeedback'>
-              <p>The correct translation for</p>
-              <p className='guess-data'> {nextWord}</p>
-              <p> was</p>
-              <p className='guess-data'> {answer}</p>
-              <p> and you chose</p>
-              <p className='guess-data'> {guess}!</p>              
-            </div>
-            <div className='active-score-container DisplayScore'>
-              <p>Your total score is:</p>
-              <p className='guess-data'> {totalScore}</p>
-            </div>
-            <button onClick={()=>this.resetResultOnNext()}>
-              Try another word!
-            </button>
-          </section>  
-        )
-      }
-      if (this.state.is_correct === false){
-        const {guess} = this.state.guess
-        const { nextWord}= this.context.head
-        const { answer , totalScore } = this.state.headRes.response
-        return (
-          <section className='container'>
-            <h2 className='guess-header'>Good try, but not quite right {`:(`}</h2>
-            <div className='guess-container'>
-              <div className='response DisplayFeedback'>
-                <p>The correct translation for</p>
-                <p className='guess-data'> {nextWord}</p>
-                <p> was</p>
-                <p className='guess-data'> {answer}</p>
-                <p> and you chose</p>
-                <p className='guess-data'> {guess}!</p>              
-              </div>
-              <div className='active-score-container DisplayScore'>
-                <p>Your total score is:</p>
-                <p className='guess-data'> {totalScore}</p>
-              </div>
-              <button onClick={()=>this.resetResultOnNext()}>
-                Try another word!
-              </button>
-            </div>
-          </section>
+          <Result
+            correct={this.state.is_correct}
+            guess={this.state.guess}
+            nextWord={this.context.nextWord}
+            answer={this.state.headRes.response.answer}
+            totalScore={this.state.headRes.response.totalScore}
+            resetResultOnNext={(e)=>{this.resetResultOnNext(e)}}
+          />  
         )
       }else{
-        throw new Error ('issue with result state: value not found')
+        throw new Error ('issue with results: value not found')
       }
     }
     return (
